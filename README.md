@@ -1,8 +1,16 @@
 # GGJ-23-Project
-Team members:
-- Ming
-- Sarah
-- Iago
+Team members
+
+Developers:
 - Paul
 - Aberto
 - Kamal
+
+Artists:
+- Ming
+- Sarah
+
+Sound:
+- Iago
+- Pablo
+
