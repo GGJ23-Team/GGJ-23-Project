@@ -207,29 +207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &548235377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1222015080557004, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
-  m_PrefabInstance: {fileID: 716638128}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &548235378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548235377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04820e231eee485a9386d54312aa317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  singleton_PauseManager: {fileID: 1011074435}
---- !u!4 &548235380 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4096501951966614, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
-  m_PrefabInstance: {fileID: 716638128}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &716638128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,6 +214,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1011074435, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1153980339}
+    - target: {fileID: 1222015080557004, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
+      propertyPath: m_Name
+      value: _SceneContext
+      objectReference: {fileID: 0}
     - target: {fileID: 4096501951966614, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -269,61 +254,31 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114847212008012636, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
-      propertyPath: _installers.Array.size
-      value: 2
+    - target: {fileID: 4096501951966614, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114847212008012636, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
-      propertyPath: _installers.Array.data[1]
-      value: 
-      objectReference: {fileID: 548235378}
+    - target: {fileID: 4096501951966614, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4096501951966614, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
---- !u!1 &1011074433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1011074434}
-  - component: {fileID: 1011074435}
-  m_Layer: 0
-  m_Name: PauseManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1011074434
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011074433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 548235380}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1011074435
+--- !u!114 &1011074435 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1011074435, guid: 56a216247913145d5b91ad89bef8269b, type: 3}
+  m_PrefabInstance: {fileID: 716638128}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011074433}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a213c2a5de18049bca0f907b753843a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1153980339}
 --- !u!1 &1063272454 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 429660800297742006, guid: 03edcb49a40637145931f1fef0179739, type: 3}
