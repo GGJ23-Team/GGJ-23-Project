@@ -9,18 +9,18 @@ public class RNG_functions : MonoBehaviour
     /** Mutate means getting a different feature value than the parents */
     int MutateFeature(int targetFeature, int featureRange)
     {
-      direction = Random.Range(0, 2)-1;
-      ammount = Random.Range(0, 2);
+      int direction = Random.Range(0, 2)-1;
+      int ammount = Random.Range(0, 2);
       return targetFeature + (direction * ammount % featureRange);
     }
 
     /** Inherit the same feature value as one of the parents or mutate */
     int InheritFeature(int featureA, int featureB, int featureRange, int mutationProbability = 0)
     {
-      probA = (100 - mutationProbability)/2;
-      probB = 100 - mutationProbability;
+      int probA = (100 - mutationProbability)/2;
+      int probB = 100 - mutationProbability;
 
-      result = Random.Range(0, 100);
+      int result = Random.Range(0, 100);
       if (result < probA)
       {
         return featureA;
@@ -31,8 +31,8 @@ public class RNG_functions : MonoBehaviour
       }
       else
       {
-        targetFeature = Random.Range(0, 2) == 0 ? featureA : featureB;
-        return mutateFeature(targetFeature, featureRange);
+        int targetFeature = Random.Range(0, 2) == 0 ? featureA : featureB;
+        return MutateFeature(targetFeature, featureRange);
       }
     }
 }
