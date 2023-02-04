@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rng_functions : MonoBehaviour
+public class RNG_functions : MonoBehaviour
 { 
     /** We asume that features are designed as a range of integers */
 
     /** Mutate means getting a different feature value than the parents */
-    int mutateFeature(int targetFeature, int featureRange)
+    int MutateFeature(int targetFeature, int featureRange)
     {
       direction = Random.Range(0, 2)-1;
       ammount = Random.Range(0, 2);
@@ -15,17 +15,17 @@ public class rng_functions : MonoBehaviour
     }
 
     /** Inherit the same feature value as one of the parents or mutate */
-    int inheritFeature(int featureA, int featureB, int featureRange, int mutationProvability = 0)
+    int InheritFeature(int featureA, int featureB, int featureRange, int mutationProbability = 0)
     {
-      provA = (100 - mutationProvability)/2;
-      provB = 100 - mutationProvability;
+      probA = (100 - mutationProbability)/2;
+      probB = 100 - mutationProbability;
 
       result = Random.Range(0, 100);
-      if (result < provA)
+      if (result < probA)
       {
         return featureA;
       }
-      else if (result < provB)
+      else if (result < probB)
       {
         return featureB;
       }
