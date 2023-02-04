@@ -12,7 +12,10 @@ public class PauseManager : MonoBehaviour
     public void SetGamePaused(bool isPaused)
     {
         this.isGamePaused = isPaused;
-        this.pauseMenu.SetActive(isPaused);
+        if(pauseMenu != null)
+        {
+            this.pauseMenu.SetActive(isPaused);
+        }
 
         if (isPaused)
         {
