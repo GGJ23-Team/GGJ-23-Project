@@ -9,10 +9,10 @@ public class Creature : MonoBehaviour
     public List<string> parentsID;
     public List<string> childrenID;
 
-    int color;
-    int form;
-    int eye;
-    int mouth;
+    public int color;
+    public int form;
+    public int eye;
+    public int mouth;
 
     public Creature(string creatureId,
                     List<string> creatureParentsID,
