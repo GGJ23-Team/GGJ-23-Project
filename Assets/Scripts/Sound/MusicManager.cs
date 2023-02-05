@@ -26,6 +26,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource[] audioSourceArray;
     private double nextStartTime;
     private int toggle = 0;
+    private int clipsInLoop = 1;
 
     void Awake()
     {
@@ -88,9 +89,9 @@ public class MusicManager : MonoBehaviour
             nextStartTime = nextStartTime + duration;
 
             toggle = 1 - toggle;
-            if (audioClipList.Count <= 2) {
-                int loop = audioClipList.Count-1;
-                audioClipList.Add(audioClipList[loop]);
+            if (audioClipList.Count <= clipsInLoop) {
+                audioClipList.Add(audioClipList[0]);
+  
             }
             audioClipList.RemoveAt(0);
         }
@@ -99,6 +100,8 @@ public class MusicManager : MonoBehaviour
     public void ChangeMusic(List<AudioClip> musica, AudioClip musicaFill = null)
     {   
         audioClipList.Clear();
+
+        clipsInLoop = musica.Count;
 
         if (musicaFill != null)
         {
