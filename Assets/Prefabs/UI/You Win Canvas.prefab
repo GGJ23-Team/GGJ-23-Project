@@ -806,7 +806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6329722759689070366
 RectTransform:
   m_ObjectHideFlags: 0
@@ -869,6 +869,8 @@ GameObject:
   - component: {fileID: 6329722759692535351}
   - component: {fileID: 6329722759692535348}
   - component: {fileID: 6329722759692535349}
+  - component: {fileID: 107591368}
+  - component: {fileID: 107591367}
   m_Layer: 5
   m_Name: You Win Canvas
   m_TagString: Untagged
@@ -973,6 +975,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a61da0748dc64d01b958361f53a9d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &107591368
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329722759692535355}
+  m_CullTransparentMesh: 1
+--- !u!114 &107591367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329722759692535355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 80fbb43362840494cba225ee50b8fdcb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6329722759944968857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6329722760100398369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1739,6 +1779,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6329722759692535354}
     m_Modifications:
+    - target: {fileID: 6938248325794859721, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -500
+      objectReference: {fileID: 0}
     - target: {fileID: 6938248325794859722, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
       propertyPath: m_Name
       value: < Back
@@ -1759,6 +1803,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 6329722759689070364}
+    - target: {fileID: 6938248326129337415, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_Text
+      value: 'Developers: Kamal Oumghar - Alberto Plaza - Paul Roberts - Sergio Lecuona'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938248326129337467, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938248326325690577, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_Text
+      value: 'Art/Story: Mingrui Yin - Sarah Pougoeva - Alisa Lapkovskaya'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938248326325690581, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938248326325690581, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -300
+      objectReference: {fileID: 0}
     - target: {fileID: 6938248327632877252, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
       propertyPath: onEnable.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.EventSystems.EventSystem, UnityEngine.UI
@@ -1853,7 +1917,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6938248327632877254, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938248327723492185, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938248327723492185, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a080f59e2c87e24c88e450ba0338589, type: 3}
