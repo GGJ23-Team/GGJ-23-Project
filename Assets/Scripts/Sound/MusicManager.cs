@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 /**
   This should be a singleton, so it is common for all scenes.
@@ -16,6 +17,7 @@ public class MusicManager : MonoBehaviour
 {
 
     public static GameObject musicManagerObject = null;
+    public AudioMixerGroup musicMixerGroup;
     public AudioClip defaultMusicClip;
     private AudioSource musicSource;
     private AudioSource musicFillSource;
@@ -43,14 +45,34 @@ public class MusicManager : MonoBehaviour
         musicFillSource = gameObject.AddComponent<AudioSource>();
         audioSourceArray = GetComponents<AudioSource>();
 
-        audioClipList.Add(defaultMusicClip);
-        audioClipList.Add(defaultMusicClip);
+        foreach (AudioSource source in audioSourceArray)
+        {
+            source.outputAudioMixerGroup = musicMixerGroup;
+        }
+
+        if(defaultMusicClip == null && audioClipList.Count == 0)
+        {
+            Debug.LogError("ERROR: No music clips implemented for MusicManager.");
+        } 
+        else if (defaultMusicClip != null && audioClipList.Count == 0)
+        {
+            audioClipList.Add(defaultMusicClip);
+        } 
+        else if (audioClipList.Count > 0)
+        {
+            Debug.Log("Clips ready to play.");
+        } else {
+            Debug.LogError("ERROR: Something went wrong with the music clips.");
+        }
 
         nextStartTime = AudioSettings.dspTime + 0.2;
         musicSource.PlayScheduled(nextStartTime);
 
-        double duration = (double)defaultMusicClip.samples / defaultMusicClip.frequency;
-        nextStartTime = nextStartTime + duration;
+        if(defaultMusicClip != null)
+        {
+          double duration = (double)defaultMusicClip.samples / defaultMusicClip.frequency;
+          nextStartTime = nextStartTime + duration;
+        }
     }
 
     void Update()
