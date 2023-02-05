@@ -58,7 +58,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (slot.CompareTag("Bin"))
+        if (slot != null && slot.CompareTag("Bin"))
         {
             Destroy(gameObject);
         }
