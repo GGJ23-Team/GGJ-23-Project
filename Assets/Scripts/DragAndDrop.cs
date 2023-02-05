@@ -9,7 +9,7 @@ public class DragAndDrop : MonoBehaviour
     GameObject slot;
     GameObject previousSlot;
     private bool isHoveringTarget = false;
-    float fitMargin = .66f;
+    float fitMargin = .5f;
 
     void Start()
     {
