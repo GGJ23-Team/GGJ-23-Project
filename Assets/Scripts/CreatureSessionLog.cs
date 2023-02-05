@@ -27,14 +27,14 @@ public class CreatureSessionLog : MonoBehaviour
 
     private void CreateRandomCreatureLog()
     {
-        for (int i = 0; i <= creaturePoolAmount; i++)
+        for (int i = 0; i < creaturePoolAmount; i++)
         {
-            int randomID = Random.Range(0, 100);
-            while (randomIDList.Contains(randomID))
-            {
-                randomID = Random.Range(0, 100);
-            }
-            randomIDList.Add(randomID);
+            //int randomID = Random.Range(0, 100);
+            //while (randomIDList.Contains(randomID))
+            //{
+            //    randomID = Random.Range(0, 100);
+            //}
+            //randomIDList.Add(randomID);
             Creature creature = new Creature(new List<string> { "", "" });
             creatureLog.Add(creature);
         }
@@ -55,7 +55,7 @@ public class CreatureSessionLog : MonoBehaviour
         if(!GetSlotsTransforms())
             return;
 
-        for (int i = 0; i <= creatureLog.Count; i++)
+        for (int i = 0; i < creatureLog.Count; i++)
         {
             Debug.Log("i: " + i);
             Debug.Log(i + ": " + slotsPositionList[i].position);
