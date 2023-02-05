@@ -58,6 +58,10 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (slot.CompareTag("Bin"))
+        {
+            Destroy(gameObject);
+        }
         if (isHoveringTarget)
         {
             transform.position = slot.transform.position;
@@ -90,8 +94,19 @@ public class DragAndDrop : MonoBehaviour
         if (collision.CompareTag("Slot")) //TAG  de los slot
         {
             Debug.Log("SLOT SLOT SLOT");
-            //previousSlot = slot;
+            previousSlot = slot;
             slot = collision.gameObject;
+        } else if (collision.CompareTag("Bin"))
+        {
+            slot = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bin"))
+        {
+            slot = previousSlot;
         }
     }
 }
