@@ -35,7 +35,7 @@ public class CreatureSessionLog : MonoBehaviour
                 randomID = Random.Range(0, 100);
             }
             randomIDList.Add(randomID);
-            Creature creature = new Creature(randomID.ToString(), new List<string> { "", "" });
+            Creature creature = new Creature(new List<string> { "", "" });
             creatureLog.Add(creature);
         }
         foreach (Creature creatureInLog in creatureLog)

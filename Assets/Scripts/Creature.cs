@@ -16,37 +16,49 @@ public class Creature : MonoBehaviour
 
     public Creature(
                     List<string> creatureParentsID,
-                    int creatureColor=-1,
-                    int creatureForm=-1,
-                    int creatureEye=-1,
-                    int creatureMouth=-1)
+                    int creatureColor = -1,
+                    int creatureForm = -1,
+                    int creatureEye = -1,
+                    int creatureMouth = -1)
     {
         id = System.Guid.NewGuid().ToString();
         // name = creatureName;
         parentsID = creatureParentsID;
         childrenID = new List<string>();
 
-        if(creatureColor == -1){
+        if (creatureColor == -1)
+        {
             color = Random.Range(0, 4);
-        } else {
+        }
+        else
+        {
             color = creatureColor;
         }
 
-        if(creatureForm == -1){
+        if (creatureForm == -1)
+        {
             form = Random.Range(0, 4);
-        } else {
+        }
+        else
+        {
             form = creatureForm;
         }
 
-        if(creatureEye == -1){
+        if (creatureEye == -1)
+        {
             eye = Random.Range(0, 4);
-        } else {
+        }
+        else
+        {
             eye = creatureEye;
         }
 
-        if(creatureMouth == -1){
+        if (creatureMouth == -1)
+        {
             mouth = Random.Range(0, 4);
-        }else {
+        }
+        else
+        {
             mouth = creatureMouth;
         }
 
