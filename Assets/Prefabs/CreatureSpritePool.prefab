@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7927333107516366601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7630430365996260410}
+  - component: {fileID: 8339750919366134808}
+  m_Layer: 0
+  m_Name: CreatureSpritePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7630430365996260410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7927333107516366601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8339750919366134808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7927333107516366601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7d9e7672a30844bb8429a1d52b30435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hueColor: 0000000050000000d700000052010000
+  bodySprites:
+  - {fileID: 21300000, guid: 2a3fa52a44bb6dd48aec58a6c43d645e, type: 3}
+  - {fileID: 21300000, guid: 87296996625f2b649aabc7f4e50e8262, type: 3}
+  - {fileID: 21300000, guid: af37ec1f88b060f469180d287a8e24c4, type: 3}
+  - {fileID: 21300000, guid: ddd1697b091c1f346ba5d97122f14f91, type: 3}
+  eyesSprites:
+  - {fileID: 21300000, guid: 56ee41eebef813549af5feb7e7e3ed7b, type: 3}
+  - {fileID: 21300000, guid: 9137ce4cecd42634f8c944547ba0b73e, type: 3}
+  - {fileID: 21300000, guid: 8c91a5f5e257b0242a222ea89cca4c15, type: 3}
+  - {fileID: 21300000, guid: 6558fc5da0c44d7498855a2c7bf2a141, type: 3}
+  mouthSprites:
+  - {fileID: 21300000, guid: 8d51d1c79e7ae464f82399c5c0d2870d, type: 3}
+  - {fileID: 21300000, guid: 16ab3b7f8cabb554eb67af0f82390cf0, type: 3}
+  - {fileID: 21300000, guid: 40b13591464332249b405bce74132c9a, type: 3}
+  - {fileID: 21300000, guid: 63e0261d3d0e8954984aea217d31277f, type: 3}
