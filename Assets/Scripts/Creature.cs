@@ -14,14 +14,14 @@ public class Creature : MonoBehaviour
     public int eye;
     public int mouth;
 
-    public Creature(string creatureId,
+    public Creature(
                     List<string> creatureParentsID,
                     int creatureColor=-1,
                     int creatureForm=-1,
                     int creatureEye=-1,
                     int creatureMouth=-1)
     {
-        id = creatureId;
+        id = System.Guid.NewGuid().ToString();
         // name = creatureName;
         parentsID = creatureParentsID;
         childrenID = new List<string>();

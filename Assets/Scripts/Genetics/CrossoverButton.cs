@@ -37,7 +37,7 @@ public class CrossoverButton : MonoBehaviour
         int childEyes = InheritFeature(parentA.eye, parentB.eye, 3);
         int childMouth = InheritFeature(parentA.mouth, parentB.mouth, 3);
       
-        Creature childCreature = new Creature(System.Guid.NewGuid().ToString(), 
+        Creature childCreature = new Creature( 
                                       new List<string> { parentA.id, parentB.id },
                                       childColor, 
                                       childForm,
