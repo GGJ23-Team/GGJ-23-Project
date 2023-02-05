@@ -6,7 +6,6 @@ public class ImageSwitcher : MonoBehaviour
 {
     public Sprite image1;
     public Sprite image2;
-    public Sprite image3;
     public float switchTime = 1.0f;
 
     private Image image;
