@@ -7,7 +7,7 @@ using UnityEngine;
   It will play the audio loops in queue providing a continuous sound stream
   trough the game but allowing to switch between loops for different scenes or 
   game events.
-  When we want to change the music, we call the method changeMusic() and pass
+  When we want to change the music, we call the method ChangeMusic() and pass
   a list of the new Theme clips and optionally a fill clip to make a smoother
   transition between themes.
 */
@@ -74,7 +74,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    public void cambioMusica(AudioClip musica, AudioClip musicaFill)
+    public void ChangeMusic(List<AudioClip> musica, AudioClip musicaFill = null)
     {   
         audioClipList.Clear();
 
@@ -82,6 +82,10 @@ public class MusicManager : MonoBehaviour
         {
             audioClipList.Add(musicaFill);
         }
-        audioClipList.Add(musica);
+
+        foreach (AudioClip clip in musica)
+        {
+            audioClipList.Add(clip);
+        }
     }
 }
