@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 6560942960988229236}
   - component: {fileID: 3106804591930126621}
   - component: {fileID: 6941270616268778558}
+  - component: {fileID: -7124801260500694001}
+  - component: {fileID: 6125574736031370429}
   m_Layer: 5
   m_Name: CreatureInSlot
   m_TagString: Slot
@@ -232,6 +234,36 @@ PositionConstraint:
   m_IsContraintActive: 0
   m_IsLocked: 0
   m_Sources: []
+--- !u!210 &-7124801260500694001
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260531763700382916}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+--- !u!114 &6125574736031370429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260531763700382916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951be5812b11c4e67b06f56a97a3df6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+  parentsID: []
+  childrenID: []
+  color: 0
+  form: 0
+  eye: 0
+  mouth: 0
 --- !u!1 &2678124839738424558
 GameObject:
   m_ObjectHideFlags: 0

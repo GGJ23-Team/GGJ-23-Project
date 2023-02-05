@@ -13,6 +13,8 @@ public class CreatureSessionLog : MonoBehaviour
     [SerializeField] private GameObject slotsPositionGO;
     private List<Transform> slotsPositionList = new List<Transform>();
 
+    public List<Creature> CreatureLog { get => creatureLog; }
+
     private void Awake()
     {
         creatureLog = new List<Creature>();

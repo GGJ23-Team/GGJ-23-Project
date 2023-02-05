@@ -66,6 +66,7 @@ public class DragAndDrop : MonoBehaviour
         {
             transform.position = slot.transform.position;
             initialPosition = transform.position;
+            gameObject.transform.SetParent(slot.transform);
         }
         else
         {
@@ -86,7 +87,7 @@ public class DragAndDrop : MonoBehaviour
             }
         }*/
 
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
