@@ -7,6 +7,7 @@ public class DragAndDrop : MonoBehaviour
     private Vector2 initialPosition;
     private Vector2 offset;
     GameObject slot;
+    GameObject previousSlot;
     private bool isHoveringTarget = false;
     float fitMargin = .66f;
 
@@ -28,7 +29,7 @@ public class DragAndDrop : MonoBehaviour
         Vector2 cursorScreenPoint = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         transform.position = cursorScreenPoint;
 
-        // Verifica si se encuentra a menos de la mitad de su tamaño de distancia de un objetivo
+        // Verifica si se encuentra a menos de la mitad de su tamaÃ±o de distancia de un objetivo
         
         if (slot != null)
         {
@@ -39,15 +40,16 @@ public class DragAndDrop : MonoBehaviour
             
             if (distance < fitDistance)
             {
-                Debug.Log("Está sobre slot");
+                Debug.Log("EstÃ¡ sobre slot");
                 isHoveringTarget = true;
                 //slotFrame.GetComponent<SpriteRenderer>().color = Color.green;
                 //slot.GetComponent<SpriteRenderer>().color = Color.green;
-            } else
+            }
+            else
             {
                 isHoveringTarget = false;
                 //slotFrame.GetComponent<SpriteRenderer>().color = Color.white;
-                //slot.GetComponent<SpriteRenderer>().color = Color.black;
+                //previousSlot.GetComponent<SpriteRenderer>().color = Color.black;
             }
         }
 
@@ -88,6 +90,7 @@ public class DragAndDrop : MonoBehaviour
         if (collision.CompareTag("Slot")) //TAG  de los slot
         {
             Debug.Log("SLOT SLOT SLOT");
+            //previousSlot = slot;
             slot = collision.gameObject;
         }
     }
