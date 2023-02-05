@@ -46,5 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicMixerGroup: {fileID: -8059739630868911833, guid: 243d55f8fe200124c8ebaf3da90fc48d, type: 2}
   defaultMusicClip: {fileID: 0}
-  audioClipList: []
+  audioClipList:
+  - {fileID: 8300000, guid: c958c40a7e250e6448703a8adbbc71cd, type: 3}
+  - {fileID: 8300000, guid: 7174ff7026603aa419162b20c942a149, type: 3}
+  - {fileID: 8300000, guid: 35ee6741b30c13c4ab20af8049663212, type: 3}
+  - {fileID: 8300000, guid: 35ee6741b30c13c4ab20af8049663212, type: 3}
   audioSourceArray: []
