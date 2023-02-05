@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 429660799816617408}
   - component: {fileID: 1571830272}
   - component: {fileID: 1571830271}
+  - component: {fileID: 666944587}
   m_Layer: 5
   m_Name: Game Canvas
   m_TagString: Untagged
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3127d40edddc45f4b933c208aaa6c331, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cec7f232b55db84cbb91f380c03d4d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -225,6 +226,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &666944587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429660799816617439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a3019aaa51c5448a3c60c9eb54812b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image1: {fileID: 21300000, guid: 10f4d48b2db1e7345be07f758f0ac4e3, type: 3}
+  image2: {fileID: 21300000, guid: 6cec7f232b55db84cbb91f380c03d4d8, type: 3}
+  switchTime: 0.5
 --- !u!1 &429660799898821514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,7 +1619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 800, y: -200}
+  m_AnchoredPosition: {x: 800, y: -210}
   m_SizeDelta: {x: -1600, y: 80}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4064834576107027216
@@ -2496,6 +2512,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 429660800086202420}
+    - target: {fileID: 8630096471342609660, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8657571399748186760, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
