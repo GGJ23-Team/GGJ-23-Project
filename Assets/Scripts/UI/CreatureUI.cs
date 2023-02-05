@@ -19,9 +19,9 @@ public class CreatureUI : MonoBehaviour
   [SerializeField] private Sprite mouthSprite;
 
   [Header("Linked gameobjects")]
-  [SerializeField] private Image bodyImage;
-  [SerializeField] private Image eyesImage;
-  [SerializeField] private Image mouthImage;
+  [SerializeField] private SpriteRenderer bodyImage;
+  [SerializeField] private SpriteRenderer eyesImage;
+  [SerializeField] private SpriteRenderer mouthImage;
 
   private float hue;
 
@@ -42,7 +42,7 @@ public class CreatureUI : MonoBehaviour
   {
     if (creatureID != null)
     {
-      UpdateCreatureData();
+      //UpdateCreatureData();
     }
   }
 
