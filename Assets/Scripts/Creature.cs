@@ -50,7 +50,7 @@ public class Creature : MonoBehaviour
             mouth = creatureMouth;
         }
 
-        Debug.Log("New Creature: " + name + " created.");
+        //Debug.Log("New Creature: " + name + " created.");
     }
 
     public void AddChild(Creature child)
