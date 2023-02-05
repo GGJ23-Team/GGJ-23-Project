@@ -1,13 +1,17 @@
 # GGJ-23-Project
 Team members
 
-Developers:
-- Paul
+Development:
 - Aberto
 - Kamal
+- Paul
+- Sergio
 
-Artists:
+Art:
+- Alisa
 - Ming
+
+Story:
 - Sarah
 
 Sound:

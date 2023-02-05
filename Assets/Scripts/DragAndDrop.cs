@@ -29,7 +29,7 @@ public class DragAndDrop : MonoBehaviour
         Vector2 cursorScreenPoint = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         transform.position = cursorScreenPoint;
 
-        // Verifica si se encuentra a menos de la mitad de su tamaño de distancia de un objetivo
+        // Verifica si se encuentra a menos de la mitad de su tamaÃ±o de distancia de un objetivo
         
         if (slot != null)
         {
@@ -40,11 +40,12 @@ public class DragAndDrop : MonoBehaviour
             
             if (distance < fitDistance)
             {
-                Debug.Log("Está sobre slot");
+                Debug.Log("EstÃ¡ sobre slot");
                 isHoveringTarget = true;
                 //slotFrame.GetComponent<SpriteRenderer>().color = Color.green;
-               // slot.GetComponent<SpriteRenderer>().color = Color.green;
-            } else
+                //slot.GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            else
             {
                 isHoveringTarget = false;
                 //slotFrame.GetComponent<SpriteRenderer>().color = Color.white;
