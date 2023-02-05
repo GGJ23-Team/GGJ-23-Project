@@ -47,8 +47,8 @@ MonoBehaviour:
   musicMixerGroup: {fileID: -8059739630868911833, guid: 243d55f8fe200124c8ebaf3da90fc48d, type: 2}
   defaultMusicClip: {fileID: 0}
   audioClipList:
-  - {fileID: 8300000, guid: c958c40a7e250e6448703a8adbbc71cd, type: 3}
-  - {fileID: 8300000, guid: 7174ff7026603aa419162b20c942a149, type: 3}
-  - {fileID: 8300000, guid: 35ee6741b30c13c4ab20af8049663212, type: 3}
-  - {fileID: 8300000, guid: 35ee6741b30c13c4ab20af8049663212, type: 3}
+  - {fileID: 8300000, guid: 4dc61c084888dcb4f96902d96de97083, type: 3}
+  - {fileID: 8300000, guid: 34843cb3be3263144ba749bbd0fbee3c, type: 3}
+  - {fileID: 8300000, guid: d9d62b62bd7617243b8859c2bdab7698, type: 3}
+  - {fileID: 8300000, guid: f3024d350d1b77448a56ac22f36067f3, type: 3}
   audioSourceArray: []
