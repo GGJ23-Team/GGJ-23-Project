@@ -280,6 +280,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6329722758860553569, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
   m_PrefabInstance: {fileID: 6329722759827245869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2063718881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6329722759692535355, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+  m_PrefabInstance: {fileID: 6329722759827245869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063718889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063718881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a3019aaa51c5448a3c60c9eb54812b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image1: {fileID: 21300000, guid: a4b70117871d99b40830a2cdb1d037f7, type: 3}
+  image2: {fileID: 21300000, guid: daa91282b01faf443b9ee30b3d5b649a, type: 3}
+  switchTime: 0.5
 --- !u!1001 &6329722759827245869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -287,10 +307,111 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107591367, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a4b70117871d99b40830a2cdb1d037f7, type: 3}
+    - target: {fileID: 3742671971215966752, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971418328210, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971418328210, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971418328210, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971418328238, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_Text
+      value: 'Developers: Kamal Oumghar - Alberto Plaza   - Paul Roberts - Sergio
+        Lecuona'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971418328238, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971418328238, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190328, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_Text
+      value: "Art/Story: Mingrui Yin - Sarah Pougoeva \n- Alisa Lapkovskaya"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190328, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190328, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190332, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190332, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190332, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671971755190332, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -370.81903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972880448999, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972978928560, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972978928560, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972978928560, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972978928560, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972978928719, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742671972978928719, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3742671973064474157, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
       propertyPath: onEnable.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1142878004}
+    - target: {fileID: 3742671973064474159, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329722758860553597, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_Text
+      value: Play Again
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329722759689070364, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6329722759689070367, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
       propertyPath: onEnable.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -382,6 +503,10 @@ PrefabInstance:
     - target: {fileID: 6329722759692535355, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
       propertyPath: m_Name
       value: You Win Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329722760357513910, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
+      propertyPath: m_Text
+      value: Main Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a1df536575345488f1be89a2fd889a, type: 3}
