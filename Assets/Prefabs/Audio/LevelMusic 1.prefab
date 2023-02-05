@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClipList:
-  - {fileID: 8300000, guid: d54f11583ceb9a94680c7f3a6c9b22e8, type: 3}
-  - {fileID: 8300000, guid: aed67a04d66a30c4aa4399a766013274, type: 3}
-  - {fileID: 8300000, guid: 590e6d556f6a872469159ff073818bf5, type: 3}
-  - {fileID: 8300000, guid: 63d769561147cf248b40748f05b8ce5a, type: 3}
+  - {fileID: 8300000, guid: ee532401a5c2ca64090b834e10219192, type: 3}
+  - {fileID: 8300000, guid: 96f4014b7e9f13041973224183c2992c, type: 3}
+  - {fileID: 8300000, guid: c7f24634057474a40bca1d7e8b3ec7cd, type: 3}
+  - {fileID: 8300000, guid: 52e07a3e96295b545a81425e1932f411, type: 3}
   fillClip: {fileID: 0}
   musicManagerName: MusicManager
   changeOnStart: 1
