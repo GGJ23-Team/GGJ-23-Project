@@ -5,85 +5,90 @@ using UnityEngine.UI;
 
 public class CreatureUI : MonoBehaviour
 {
-  [Header("Target Creature")]
-  private CreatureSessionLog creatureSessionLog;
-  private CreatureSpritePool creatureSpritePool;
-  private Creature creature;
-  [SerializeField] private string creatureID;
+    [Header("Target Creature")]
+    private CreatureSessionLog creatureSessionLog;
+    private CreatureSpritePool creatureSpritePool;
+    private Creature creature;
+    [SerializeField] private string creatureID;
 
-  [Header("Attributes")]
-  [SerializeField] private Sprite bodySprite;
-  [Range(0, 360)]
-  [SerializeField] private int hueColor;
-  [SerializeField] private Sprite eyesSprite;
-  [SerializeField] private Sprite mouthSprite;
+    [Header("Attributes")]
+    [SerializeField] private Sprite bodySprite;
+    [Range(0, 360)]
+    [SerializeField] private int hueColor;
+    [SerializeField] private Sprite eyesSprite;
+    [SerializeField] private Sprite mouthSprite;
 
-  [Header("Linked gameobjects")]
-  [SerializeField] private SpriteRenderer bodyImage;
-  [SerializeField] private SpriteRenderer eyesImage;
-  [SerializeField] private SpriteRenderer mouthImage;
+    [Header("Linked gameobjects")]
+    [SerializeField] private SpriteRenderer bodyImage;
+    [SerializeField] private SpriteRenderer eyesImage;
+    [SerializeField] private SpriteRenderer mouthImage;
 
-  private float hue;
+    private float hue;
 
-  private void Awake()
-  {
-    creatureSessionLog = FindObjectOfType<CreatureSessionLog>();
-    if (creatureSessionLog == null) {
-      Debug.LogError("CreatureSessionLog not found.");
-    }
-
-    creatureSpritePool = FindObjectOfType<CreatureSpritePool>();
-    if (creatureSpritePool == null) {
-      Debug.LogError("CreatureSpritePool not found.");
-    }
-  }
-
-  private void Start()
-  {
-    if (creatureID != null)
+    private void Awake()
     {
-      //UpdateCreatureData();
-    }
-  }
+        creatureSessionLog = FindObjectOfType<CreatureSessionLog>();
+        if (creatureSessionLog == null)
+        {
+            Debug.LogError("CreatureSessionLog not found.");
+        }
 
-  private void OnValidate()
-  {
-    SetCreatureAspect();
-  }
-
-  private void UpdateCreatureData()
-  {
-    creature = creatureSessionLog.GetCreatureByID(creatureID);
-
-    if (creature != null)
-    {
-      creatureID = creature.id;
-      hueColor = creatureSpritePool.hueColor[creature.color];
-      bodySprite = creatureSpritePool.bodySprites[creature.form];
-      eyesSprite = creatureSpritePool.eyesSprites[creature.eye];
-      mouthSprite = creatureSpritePool.mouthSprites[creature.mouth];
-    } 
-    else
-    {
-      Debug.LogError("CreatureSessionLog not found.");
+        creatureSpritePool = FindObjectOfType<CreatureSpritePool>();
+        if (creatureSpritePool == null)
+        {
+            Debug.LogError("CreatureSpritePool not found.");
+        }
     }
 
-    SetCreatureAspect();
-  }
-  private void SetCreatureAspect()
-  {
-    bodyImage.sprite = bodySprite;
-    hue = Mathf.InverseLerp(0, 360, (float)hueColor);
-    bodyImage.color = Color.HSVToRGB(hue, 1, 1);
-    eyesImage.sprite = eyesSprite;
-    mouthImage.sprite = mouthSprite;
-  }
+    private void Start()
+    {
+        if (creatureID != null)
+        {
+            //UpdateCreatureData();
+        }
+    }
 
-  public void SetCreatureID(string id)
-  {
-    creatureID = id;
-    UpdateCreatureData();
-  }
+    private void OnValidate()
+    {
+        SetCreatureAspect();
+    }
+
+    private void UpdateCreatureData()
+    {
+        creature = creatureSessionLog.GetCreatureByID(creatureID);
+
+        if (creature != null)
+        {
+            creatureID = creature.id;
+            hueColor = creatureSpritePool.hueColor[creature.color];
+            bodySprite = creatureSpritePool.bodySprites[creature.form];
+            eyesSprite = creatureSpritePool.eyesSprites[creature.eye];
+            mouthSprite = creatureSpritePool.mouthSprites[creature.mouth];
+        }
+        else
+        {
+            Debug.LogError("CreatureSessionLog not found.");
+        }
+
+        SetCreatureAspect();
+    }
+    private void SetCreatureAspect()
+    {
+        if (bodyImage != null)
+        {
+            bodyImage.sprite = bodySprite;
+            hue = Mathf.InverseLerp(0, 360, (float)hueColor);
+            bodyImage.color = Color.HSVToRGB(hue, 1, 1);
+            eyesImage.sprite = eyesSprite;
+            mouthImage.sprite = mouthSprite;
+        }
+    }
+
+    public void SetCreatureID(string id)
+    {
+        creatureID = id;
+        UpdateCreatureData();
+    }
 
 
 }

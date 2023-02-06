@@ -42,25 +42,23 @@ public class CreatureSessionLog : MonoBehaviour
         }
         foreach (Creature creatureInLog in creatureLog)
         {
-            Debug.Log(creatureInLog.id);
-            Debug.Log(creatureInLog.eye);
+            Debug.Log("creatureInLog.id: " + creatureInLog.id + " creatureInLog.eye: " + creatureInLog.eye);
         }
     }
     private void InstantiateCreatureLog()
     {
-        if(creatureLog.Count == 0 || creatureLog == null)
+        if (creatureLog.Count == 0 || creatureLog == null)
         {
             Debug.Log("creature log is empty!");
             return;
         }
 
-        if(!GetSlotsTransforms())
+        if (!GetSlotsTransforms())
             return;
 
         for (int i = 0; i < creatureLog.Count; i++)
         {
-            Debug.Log("i: " + i);
-            Debug.Log(i + ": " + slotsPositionList[i].position);
+            Debug.Log("creatureLog " + i + " position: " + slotsPositionList[i].position);
             GameObject creatureGO = Instantiate(prefabCreatureInSlot, parentGO.transform);
             creatureGO.transform.position = slotsPositionList[i].position;
             creatureGO.transform.localScale = new Vector3(200, 200);
@@ -104,7 +102,7 @@ public class CreatureSessionLog : MonoBehaviour
     }
 
     public void RemoveCreature(Creature creature)
-    { 
+    {
         bool found = false;
         foreach (Creature creatureInLog in creatureLog)
         {
