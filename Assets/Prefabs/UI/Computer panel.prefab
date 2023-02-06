@@ -354,7 +354,8 @@ MonoBehaviour:
   creaturePoolAmount: 4
   parentGO: {fileID: 2433371209325766937}
   prefabCreatureInSlot: {fileID: 2260531763700382916, guid: cab3c3462171ec34a8de2c08aa88b6d8, type: 3}
-  computerPanel: {fileID: 0}
+  computerPanel: {fileID: 2433371209325766937}
+  creatureSpritePool: {fileID: 7927333107516366601, guid: 31d29784f2d39496186a70e7fe91b267, type: 3}
 --- !u!1 &2433371209114702602
 GameObject:
   m_ObjectHideFlags: 0

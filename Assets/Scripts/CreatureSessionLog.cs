@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreatureSessionLog : MonoBehaviour
 {
@@ -9,7 +12,9 @@ public class CreatureSessionLog : MonoBehaviour
     [SerializeField] private GameObject parentGO;
     [SerializeField] private GameObject prefabCreatureInSlot;
     [SerializeField] private GameObject computerPanel;
-    private List<Creature> creatureLog;
+    [SerializeField] private GameObject creatureSpritePool;
+    public List<Creature> creatureLog;
+
 
     private void Awake()
     {
@@ -46,9 +51,25 @@ public class CreatureSessionLog : MonoBehaviour
 
         for (int i = 0; i < creatureLog.Count; i++)
         {
-            GameObject creatureGO = Instantiate(prefabCreatureInSlot, childrenWithTag[i].transform);
+            GameObject randomCreature = BuildRandomCreatureGO(i);
+            GameObject creatureGO = Instantiate(randomCreature, childrenWithTag[i].transform);
             //creatureGO.transform.position = childrenWithTag[i].transform.position;
         }
+    }
+
+    private GameObject BuildRandomCreatureGO(int index)
+    {
+        var creatureSprite = creatureSpritePool.GetComponent<CreatureSpritePool>();
+        var desiredBody = creatureSprite.bodySprites[creatureLog[index].form];
+        var desiredEye = creatureSpritePool.GetComponent<CreatureSpritePool>().eyesSprites[creatureLog[index].eye];
+        var desiredMouth = creatureSpritePool.GetComponent<CreatureSpritePool>().mouthSprites[creatureLog[index].mouth];
+        var desiredColor = creatureSpritePool.GetComponent<CreatureSpritePool>().color[creatureLog[index].color];
+
+        prefabCreatureInSlot.transform.GetChild(0).GetComponent<Image>().sprite = desiredBody;
+        prefabCreatureInSlot.transform.GetChild(0).GetComponent<Image>().color = desiredColor;
+        prefabCreatureInSlot.transform.GetChild(1).GetComponent<Image>().sprite = desiredEye;
+        prefabCreatureInSlot.transform.GetChild(2).GetComponent<Image>().sprite = desiredMouth;
+        return prefabCreatureInSlot;
     }
 
     public void AddCreature(Creature creature)

@@ -6,8 +6,7 @@ public class CreatureSpritePool : MonoBehaviour
 {
   [Header("Genetic treats")]
   
-  [Range(0, 360)]
-  public List<int> hueColor;
+  public List<Color> color;
   public List<Sprite> bodySprites;
   public List<Sprite> eyesSprites;
   public List<Sprite> mouthSprites;
