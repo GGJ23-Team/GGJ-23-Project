@@ -92,10 +92,10 @@ MonoBehaviour:
   id: 
   parentsID: []
   childrenID: []
-  color: 0
-  form: 0
-  eye: 0
-  mouth: 0
+  color: 1
+  form: 1
+  eye: 1
+  mouth: 1
 --- !u!1 &6909256729443822754
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.96862745, g: 0.4627451, b: 0.1254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

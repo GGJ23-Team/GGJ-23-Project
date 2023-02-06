@@ -566,10 +566,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 616071449, guid: 03edcb49a40637145931f1fef0179739, type: 3}
-      propertyPath: creatureSpritePool
-      value: 
-      objectReference: {fileID: 971486624}
     - target: {fileID: 429660799816617410, guid: 03edcb49a40637145931f1fef0179739, type: 3}
       propertyPath: m_Camera
       value: 
@@ -670,6 +666,10 @@ PrefabInstance:
       propertyPath: onEnable.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1101175796}
+    - target: {fileID: 2433371208225195547, guid: 03edcb49a40637145931f1fef0179739, type: 3}
+      propertyPath: creatureSpritePool
+      value: 
+      objectReference: {fileID: 971486624}
     - target: {fileID: 2625341126963664073, guid: 03edcb49a40637145931f1fef0179739, type: 3}
       propertyPath: creatureSpritePool
       value: 
