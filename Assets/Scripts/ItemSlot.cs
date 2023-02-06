@@ -12,6 +12,10 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         {
             eventData.pointerDrag.GetComponent<RectTransform>().transform.SetParent(GetComponent<RectTransform>().transform);
             eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
+            if (transform.parent != null && GetComponent<RectTransform>().tag == "Bin")
+            {
+                Destroy(eventData.pointerDrag.GetComponent<GameObject>().transform.gameObject);
+            }
         }
     }
 }

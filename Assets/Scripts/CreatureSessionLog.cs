@@ -20,10 +20,7 @@ public class CreatureSessionLog : MonoBehaviour
     {
         creatureLog = new List<Creature>();
         CreateRandomCreatureLog();
-        //GetChildTransforms();
         InstantiateCreatureLog();
-
-        //PlaceCreaturesInPosition();
     }
 
     private void CreateRandomCreatureLog()
@@ -32,7 +29,6 @@ public class CreatureSessionLog : MonoBehaviour
         {
             var firstCreature = new Creature(new List<string> { "", "" });
             creatureLog.Add(firstCreature);
-            Debug.Log("creatureInLog.id: " + firstCreature.id + " creatureInLog.eye: " + firstCreature.eye);
         }
     }
 
@@ -51,20 +47,27 @@ public class CreatureSessionLog : MonoBehaviour
 
         for (int i = 0; i < creatureLog.Count; i++)
         {
-            GameObject randomCreature = BuildRandomCreatureGO(i);
+            GameObject randomCreature = BuildCreatureGO(i);
+            randomCreature.GetComponent<Creature>().id = creatureLog[i].id;
+            randomCreature.GetComponent<Creature>().eye = creatureLog[i].eye;
+            randomCreature.GetComponent<Creature>().mouth = creatureLog[i].mouth;
+            randomCreature.GetComponent<Creature>().color = creatureLog[i].color;
+            randomCreature.GetComponent<Creature>().form = creatureLog[i].form;
             GameObject creatureGO = Instantiate(randomCreature, childrenWithTag[i].transform);
-            //creatureGO.transform.position = childrenWithTag[i].transform.position;
         }
     }
 
-    private GameObject BuildRandomCreatureGO(int index)
+    private GameObject BuildCreatureGO(int index)
     {
-        var creatureSprite = creatureSpritePool.GetComponent<CreatureSpritePool>();
-        var desiredBody = creatureSprite.bodySprites[creatureLog[index].form];
+        var desiredBody = creatureSpritePool.GetComponent<CreatureSpritePool>().bodySprites[creatureLog[index].form];
         var desiredEye = creatureSpritePool.GetComponent<CreatureSpritePool>().eyesSprites[creatureLog[index].eye];
         var desiredMouth = creatureSpritePool.GetComponent<CreatureSpritePool>().mouthSprites[creatureLog[index].mouth];
         var desiredColor = creatureSpritePool.GetComponent<CreatureSpritePool>().color[creatureLog[index].color];
+        return BuildDefinitiveCreature(desiredBody, desiredEye, desiredMouth, desiredColor);
+    }
 
+    public GameObject BuildDefinitiveCreature(Sprite desiredBody, Sprite desiredEye, Sprite desiredMouth, Color desiredColor)
+    {
         prefabCreatureInSlot.transform.GetChild(0).GetComponent<Image>().sprite = desiredBody;
         prefabCreatureInSlot.transform.GetChild(0).GetComponent<Image>().color = desiredColor;
         prefabCreatureInSlot.transform.GetChild(1).GetComponent<Image>().sprite = desiredEye;
