@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.XR;
 
 public class New_DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -22,7 +23,7 @@ public class New_DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHan
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        gameObject.transform.SetParent(computerPanel.transform);
+        gameObject.transform.SetParent(GameObject.Find("Computer panel").transform);
 
         Debug.Log("OnBeginDrag");
         canvasGroup.alpha = .6f;
