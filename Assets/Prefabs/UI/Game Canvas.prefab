@@ -1893,6 +1893,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1607716359}
     - target: {fileID: 408147378821993419, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+      propertyPath: creaturePoolAmount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 408147378821993419, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+      propertyPath: creatureSpritePool
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 408147378821993419, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
       propertyPath: prefabCreatureInSlot
       value: 
       objectReference: {fileID: 2191102577766110844, guid: a4f15e3448c7382478186fe2330434cc, type: 3}
@@ -2590,6 +2598,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5708009546961198663, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+    - {fileID: 5409047252660558048, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+    - {fileID: 7623854951251384017, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
 --- !u!1 &1607716359 stripped
 GameObject:
@@ -2626,10 +2636,15 @@ MonoBehaviour:
   creatureList: []
   creatureSessionLog: {fileID: 2625341126963664073}
   creaturePrefab: {fileID: 2260531763700382916, guid: cab3c3462171ec34a8de2c08aa88b6d8, type: 3}
-  parentAContainer: {fileID: 0}
-  parentBContainer: {fileID: 0}
-  createdCreatureContainer: {fileID: 0}
+  parentLeftContainer: {fileID: 7362608282247730579}
+  parentRightContainer: {fileID: 699191847126821697}
+  createdCreatureContainer: {fileID: 3486587900898058790}
   parentGO: {fileID: 1725165083}
+--- !u!1 &699191847126821697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2914134070189517891, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+  m_PrefabInstance: {fileID: 2433371207745505026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2625341126963664073 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 408147378821993419, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
@@ -2641,6 +2656,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29dd7aa49e6a4485cae8a8201f5b1c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3486587900898058790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1272208627383510308, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+  m_PrefabInstance: {fileID: 2433371207745505026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7362608282247730579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5181443056388018833, guid: 8ec2029b0d0c5384c9dbacf47f1f9c7b, type: 3}
+  m_PrefabInstance: {fileID: 2433371207745505026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4116551976804796636
 PrefabInstance:
   m_ObjectHideFlags: 0

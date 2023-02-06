@@ -7,14 +7,13 @@ public class CreatureUI : MonoBehaviour
 {
     [Header("Target Creature")]
     private CreatureSessionLog creatureSessionLog;
-    private CreatureSpritePool creatureSpritePool;
+    [HideInInspector] public CreatureSpritePool creatureSpritePool;
     private Creature creature;
     [SerializeField] private string creatureID;
 
     [Header("Attributes")]
     [SerializeField] private Sprite bodySprite;
-    [Range(0, 360)]
-    [SerializeField] private int hueColor;
+    [SerializeField] private Color hueColor;
     [SerializeField] private Sprite eyesSprite;
     [SerializeField] private Sprite mouthSprite;
 
@@ -60,7 +59,7 @@ public class CreatureUI : MonoBehaviour
         if (creature != null)
         {
             creatureID = creature.id;
-            hueColor = creatureSpritePool.hueColor[creature.color];
+            //hueColor = creatureSpritePool.hueColor[creature];
             bodySprite = creatureSpritePool.bodySprites[creature.form];
             eyesSprite = creatureSpritePool.eyesSprites[creature.eye];
             mouthSprite = creatureSpritePool.mouthSprites[creature.mouth];
@@ -78,7 +77,7 @@ public class CreatureUI : MonoBehaviour
         if (bodyImage != null)
         {
             bodyImage.sprite = bodySprite;
-            hue = Mathf.InverseLerp(0, 360, (float)hueColor);
+            //hue = Mathf.InverseLerp(0, 360, (float)hueColor);
             bodyImage.color = Color.HSVToRGB(hue, 1, 1);
             eyesImage.sprite = eyesSprite;
             mouthImage.sprite = mouthSprite;

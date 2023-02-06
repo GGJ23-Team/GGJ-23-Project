@@ -13,9 +13,9 @@ public class CrossoverButton : MonoBehaviour
     public CreatureSessionLog creatureSessionLog; // Shoud be a singleton
     public GameObject creaturePrefab;
 
-    public RectTransform parentAContainer;
-    public RectTransform parentBContainer;
-    public RectTransform createdCreatureContainer;
+    [SerializeField] private GameObject parentLeftContainer;
+    [SerializeField] private GameObject parentRightContainer;
+    [SerializeField] private GameObject createdCreatureContainer;
     [SerializeField] private GameObject parentGO;
 
     // Temporal Dirty Debug - - - -
@@ -28,15 +28,13 @@ public class CrossoverButton : MonoBehaviour
 
     public void PerformCrossover()
     {
-        var obj = parentAContainer.GetChild(1).GetComponent<Creature>();
-        var obj2 = parentAContainer.GetChild(0);
-        parentAContainer.GetChild(1).GetComponent<Creature>().id = System.Guid.NewGuid().ToString();
-        parentBContainer.GetChild(1).GetComponent<Creature>().id = System.Guid.NewGuid().ToString();
-        leftParentID = parentAContainer.GetChild(1).GetComponent<Creature>().id;
-        rightParentID = parentBContainer.GetChild(1).GetComponent<Creature>().id;
+        parentLeftContainer.transform.GetChild(0).GetComponent<Creature>().id = System.Guid.NewGuid().ToString();
+        parentRightContainer.transform.GetChild(0).GetComponent<Creature>().id = System.Guid.NewGuid().ToString();
+        leftParentID = parentLeftContainer.transform.GetChild(0).GetComponent<Creature>().id;
+        rightParentID = parentRightContainer.transform.GetChild(0).GetComponent<Creature>().id;
 
-        parentA = creatureList.Find(x => x.id == leftParentID);
-        parentB = creatureList.Find(x => x.id == rightParentID);
+        parentA = creatureSessionLog.creatureLog.Find(x => x.id == leftParentID);
+        parentB = creatureSessionLog.creatureLog.Find(x => x.id == rightParentID);
 
         int childColor = InheritFeature(parentA.color, parentB.color, 3);
         int childForm = InheritFeature(parentA.form, parentB.form, 3);
@@ -50,10 +48,10 @@ public class CrossoverButton : MonoBehaviour
                                       childEyes,
                                       childMouth);
 
-        creatureList.Add(childCreature);
+        creatureSessionLog.creatureLog.Add(childCreature);
 
         GameObject newCreature = Instantiate(creaturePrefab, transform.position, Quaternion.identity, parentGO.transform);
-        newCreature.transform.position = createdCreatureContainer.position;
+        newCreature.transform.position = createdCreatureContainer.transform.position;
         newCreature.transform.localScale = new Vector3(200, 200);
     }
 
