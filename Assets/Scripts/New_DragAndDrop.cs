@@ -52,6 +52,7 @@ public class New_DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHan
             lastSlot = rectTransform.gameObject.transform.parent;
             lastPosition = rectTransform.position;
         }
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
