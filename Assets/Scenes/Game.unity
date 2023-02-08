@@ -606,6 +606,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 152457751868078774, guid: 03edcb49a40637145931f1fef0179739, type: 3}
+      propertyPath: initialTime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 241807876525170582, guid: 03edcb49a40637145931f1fef0179739, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
