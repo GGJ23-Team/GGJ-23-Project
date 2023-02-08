@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5329186745534266953}
   - component: {fileID: -8247561671059314423}
+  - component: {fileID: 3713704500799855735}
   m_Layer: 0
   m_Name: GameOverMusic
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7447043184428023905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ba3e06e1dee641d5aede6bd00a16514, type: 3}
   m_Name: 
@@ -49,4 +50,26 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c13fd110f47b64d5bbd16924958a99bc, type: 3}
   fillClip: {fileID: 8300000, guid: 8f7c3cc846ecf424686baab46a50eecd, type: 3}
   musicManagerName: MusicManager
+  changeOnStart: 1
+--- !u!114 &3713704500799855735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447043184428023905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b40298ed69964d22bfe146fc5f7bf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnceList:
+  - {fileID: 8300000, guid: 8f7c3cc846ecf424686baab46a50eecd, type: 3}
+  loopList:
+  - {fileID: 8300000, guid: 4dc61c084888dcb4f96902d96de97083, type: 3}
+  - {fileID: 8300000, guid: 34843cb3be3263144ba749bbd0fbee3c, type: 3}
+  - {fileID: 8300000, guid: d9d62b62bd7617243b8859c2bdab7698, type: 3}
+  - {fileID: 8300000, guid: f3024d350d1b77448a56ac22f36067f3, type: 3}
+  fillClip: {fileID: 0}
+  musicManagerGO: MusicManager
   changeOnStart: 1
