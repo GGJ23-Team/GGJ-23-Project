@@ -70,11 +70,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 96f4014b7e9f13041973224183c2992c, type: 3}
   - {fileID: 8300000, guid: c7f24634057474a40bca1d7e8b3ec7cd, type: 3}
   - {fileID: 8300000, guid: 52e07a3e96295b545a81425e1932f411, type: 3}
+  loopList:
   - {fileID: 8300000, guid: 6ca4ca0d59a663f4ca0545a48e777dec, type: 3}
   - {fileID: 8300000, guid: 560997086b6596e4c8a406d69c27bc1b, type: 3}
   - {fileID: 8300000, guid: 90344557a99e95f4faed2944d3efac75, type: 3}
   - {fileID: 8300000, guid: 0679aad33cca4bd4199a06363a437ea1, type: 3}
-  loopList:
   - {fileID: 8300000, guid: d00fa57b1606eff49bc49b22a72d20a5, type: 3}
   - {fileID: 8300000, guid: 210b153989bb4b44a8052c52eccacaef, type: 3}
   - {fileID: 8300000, guid: 4b4681b6247a38a4fbdbefb4e97129fc, type: 3}
