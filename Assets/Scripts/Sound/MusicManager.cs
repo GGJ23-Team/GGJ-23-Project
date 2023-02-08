@@ -37,7 +37,8 @@ public class MusicManager : MonoBehaviour
 
     private AudioSource musicSource;
     private AudioSource musicFillSource;
-    private AudioSource[] audioSourceArray; 
+    private AudioSource[] audioSourceArray;
+    private string scheduledClip; 
     private string lastLoopClip;   
     private double nextStartTime;
     private int toggle = 0;
@@ -75,7 +76,7 @@ public class MusicManager : MonoBehaviour
         else if (defaultMusicClips.Count != 0 && audioClipList.Count == 0)
         {
             clipsInLoop = defaultMusicClips.Count;
-            lastLoopClip = defaultMusicClips.Last().name;
+            lastLoopClip = defaultMusicClips[clipsInLoop-1].name;
 
             foreach (AudioClip clip in defaultMusicClips)
             {
@@ -103,6 +104,7 @@ public class MusicManager : MonoBehaviour
                 }
 
                 AudioClip clipToPlay = audioClipList[0];
+                scheduledClip = clipToPlay.name;
 
                 audioSourceArray[toggle].clip = clipToPlay;
                 audioSourceArray[toggle].PlayScheduled(nextStartTime);
@@ -118,7 +120,7 @@ public class MusicManager : MonoBehaviour
 
                 audioClipList.RemoveAt(0);
 
-                if (clicToPlay.name == lastLoopClip && onLoopEnd != null){
+                if (scheduledClip == lastLoopClip && onLoopEnd != null){
                     onLoopEnd.Invoke();
                 } 
             }
@@ -130,7 +132,7 @@ public class MusicManager : MonoBehaviour
         } else if (AudioSettings.dspTime >= nextStartTime)
         {
             isPlaying = false;
-            if (onplayEnd != null) onPlayEnd.Invoke();
+            if (onPlayEnd != null) onPlayEnd.Invoke();
         }
     }
 
@@ -139,7 +141,7 @@ public class MusicManager : MonoBehaviour
         audioClipList.Clear();
 
         clipsInLoop = musica.Count;
-        lastLoopClip = musica.Last().name;
+        lastLoopClip = musica[clipsInLoop-1].name;
 
         if (musicaFill != null)
         {
