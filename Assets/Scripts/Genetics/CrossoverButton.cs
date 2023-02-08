@@ -64,15 +64,28 @@ public class CrossoverButton : MonoBehaviour
         creaturePrefab.GetComponent<Creature>().eye = childCreature.eye;
         creaturePrefab.GetComponent<Creature>().mouth = childCreature.mouth;
 
-        var desiredBody = creatureSpritePool.GetComponent<CreatureSpritePool>().bodySprites[childCreature.form];
-        var desiredEye = creatureSpritePool.GetComponent<CreatureSpritePool>().eyesSprites[childCreature.eye];
-        var desiredMouth = creatureSpritePool.GetComponent<CreatureSpritePool>().mouthSprites[childCreature.mouth];
-        var desiredColor = creatureSpritePool.GetComponent<CreatureSpritePool>().color[childCreature.color];
+        Sprite desiredBody, desiredEye, desiredMouth;
+        Color desiredColor;
+        GetDesiredFeatures(childCreature, out desiredBody, out desiredEye, out desiredMouth, out desiredColor);
 
-        creaturePrefab = creatureSessionLog.BuildDefinitiveCreature(desiredBody, desiredEye, desiredMouth, desiredColor);
-        Instantiate(creaturePrefab, createdCreature.transform);
+        InstantiateCreature(desiredBody, desiredEye, desiredMouth, desiredColor);
 
         CheckIfWin();
+    }
+
+    private void InstantiateCreature(Sprite desiredBody, Sprite desiredEye, Sprite desiredMouth, Color desiredColor)
+    {
+        creaturePrefab = creatureSessionLog.BuildDefinitiveCreature(desiredBody, desiredEye, desiredMouth, desiredColor);
+        Instantiate(creaturePrefab, createdCreature.transform);
+        creaturePrefab.transform.localScale = new Vector3(100, 100);
+    }
+
+    private void GetDesiredFeatures(Creature childCreature, out Sprite desiredBody, out Sprite desiredEye, out Sprite desiredMouth, out Color desiredColor)
+    {
+        desiredBody = creatureSpritePool.GetComponent<CreatureSpritePool>().bodySprites[childCreature.form];
+        desiredEye = creatureSpritePool.GetComponent<CreatureSpritePool>().eyesSprites[childCreature.eye];
+        desiredMouth = creatureSpritePool.GetComponent<CreatureSpritePool>().mouthSprites[childCreature.mouth];
+        desiredColor = creatureSpritePool.GetComponent<CreatureSpritePool>().color[childCreature.color];
     }
 
     private void CheckIfWin()
@@ -91,7 +104,6 @@ public class CrossoverButton : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         new LoadScene().LoadSceneByPath("Assets/Scenes/You Win.unity");
-
     }
     /** Mutate: get a feature neart to one of the parents' */
     public int MutateFeature(int targetFeature, int featureRange)
