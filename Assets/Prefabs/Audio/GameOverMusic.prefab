@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5329186745534266953}
-  - component: {fileID: -8247561671059314423}
   - component: {fileID: 3713704500799855735}
   m_Layer: 0
   m_Name: GameOverMusic
@@ -33,24 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8247561671059314423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7447043184428023905}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba3e06e1dee641d5aede6bd00a16514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClipList:
-  - {fileID: 8300000, guid: c13fd110f47b64d5bbd16924958a99bc, type: 3}
-  - {fileID: 8300000, guid: c13fd110f47b64d5bbd16924958a99bc, type: 3}
-  fillClip: {fileID: 8300000, guid: 8f7c3cc846ecf424686baab46a50eecd, type: 3}
-  musicManagerName: MusicManager
-  changeOnStart: 1
 --- !u!114 &3713704500799855735
 MonoBehaviour:
   m_ObjectHideFlags: 0
