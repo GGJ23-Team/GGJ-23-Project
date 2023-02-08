@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 2191102577766110844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 100, y: 100, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2412857222627244527}
@@ -89,11 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951be5812b11c4e67b06f56a97a3df6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
+  id: 793d3183-0ac6-4d76-a8d4-1d0d1afc5179
   parentsID: []
   childrenID: []
-  color: 1
-  form: 1
+  color: 3
+  form: 0
   eye: 1
   mouth: 1
 --- !u!1 &6909256729443822754
@@ -231,14 +231,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.96862745, g: 0.4627451, b: 0.1254902, a: 1}
+  m_Color: {r: 0.5764706, g: 0.7294118, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 87296996625f2b649aabc7f4e50e8262, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a3fa52a44bb6dd48aec58a6c43d645e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
