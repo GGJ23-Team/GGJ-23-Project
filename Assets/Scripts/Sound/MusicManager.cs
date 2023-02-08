@@ -18,7 +18,7 @@ public class MusicManager : MonoBehaviour
 
     public static GameObject musicManagerObject = null;
     public AudioMixerGroup musicMixerGroup;
-    public AudioClip defaultMusicClip;
+    public List<AudioClip> defaultMusicClips;
     private AudioSource musicSource;
     private AudioSource musicFillSource;
 
@@ -51,13 +51,16 @@ public class MusicManager : MonoBehaviour
             source.outputAudioMixerGroup = musicMixerGroup;
         }
 
-        if(defaultMusicClip == null && audioClipList.Count == 0)
+        if(defaultMusicClips.Count == 0 && audioClipList.Count == 0)
         {
             Debug.LogError("ERROR: No music clips implemented for MusicManager.");
         } 
-        else if (defaultMusicClip != null && audioClipList.Count == 0)
+        else if (defaultMusicClips.Count != 0 && audioClipList.Count == 0)
         {
-            audioClipList.Add(defaultMusicClip);
+            foreach (AudioClip clip in defaultMusicClips)
+            {
+                audioClipList.Add(clip);
+            }
         } 
         else if (audioClipList.Count > 0)
         {
@@ -67,13 +70,6 @@ public class MusicManager : MonoBehaviour
         }
 
         nextStartTime = AudioSettings.dspTime + 0.2;
-        musicSource.PlayScheduled(nextStartTime);
-
-        if(defaultMusicClip != null)
-        {
-          double duration = (double)defaultMusicClip.samples / defaultMusicClip.frequency;
-          nextStartTime = nextStartTime + duration;
-        }
     }
 
     void Update()
