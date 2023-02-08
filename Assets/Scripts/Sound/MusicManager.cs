@@ -43,6 +43,7 @@ public class MusicManager : MonoBehaviour
     private double nextStartTime;
     private int toggle = 0;
     private int clipsInLoop = 1;
+    [SerializeField]
     private bool doLoop = true;
     private bool isPlaying = false;
 
@@ -114,7 +115,7 @@ public class MusicManager : MonoBehaviour
 
                 toggle = 1 - toggle;
 
-                if (audioClipList.Count <= clipsInLoop) {
+                if (audioClipList.Count <= clipsInLoop && doLoop) {
                     audioClipList.Add(audioClipList[0]);
                 }
 
