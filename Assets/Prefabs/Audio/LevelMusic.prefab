@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5329186745534266953}
   - component: {fileID: -8247561671059314423}
+  - component: {fileID: 7922160880394265554}
   m_Layer: 0
-  m_Name: LevelMusic 1
+  m_Name: LevelMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7447043184428023905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ba3e06e1dee641d5aede6bd00a16514, type: 3}
   m_Name: 
@@ -51,4 +52,33 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 52e07a3e96295b545a81425e1932f411, type: 3}
   fillClip: {fileID: 0}
   musicManagerName: MusicManager
+  changeOnStart: 1
+--- !u!114 &7922160880394265554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447043184428023905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b40298ed69964d22bfe146fc5f7bf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnceList:
+  - {fileID: 8300000, guid: ee532401a5c2ca64090b834e10219192, type: 3}
+  - {fileID: 8300000, guid: 96f4014b7e9f13041973224183c2992c, type: 3}
+  - {fileID: 8300000, guid: c7f24634057474a40bca1d7e8b3ec7cd, type: 3}
+  - {fileID: 8300000, guid: 52e07a3e96295b545a81425e1932f411, type: 3}
+  - {fileID: 8300000, guid: 6ca4ca0d59a663f4ca0545a48e777dec, type: 3}
+  - {fileID: 8300000, guid: 560997086b6596e4c8a406d69c27bc1b, type: 3}
+  - {fileID: 8300000, guid: 90344557a99e95f4faed2944d3efac75, type: 3}
+  - {fileID: 8300000, guid: 0679aad33cca4bd4199a06363a437ea1, type: 3}
+  loopList:
+  - {fileID: 8300000, guid: d00fa57b1606eff49bc49b22a72d20a5, type: 3}
+  - {fileID: 8300000, guid: 210b153989bb4b44a8052c52eccacaef, type: 3}
+  - {fileID: 8300000, guid: 4b4681b6247a38a4fbdbefb4e97129fc, type: 3}
+  - {fileID: 8300000, guid: b54d4cdc101171d4cb1afaa1a2d04a3d, type: 3}
+  fillClip: {fileID: 0}
+  musicManagerGO: MusicManager
   changeOnStart: 1
