@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
+    public CreatureSessionLog creatureLog;
     public string id;
     // public string name;
     public List<string> parentsID;
     public List<string> childrenID;
+    public int generation;
 
     public int color;
     public int form;
@@ -19,6 +21,20 @@ public class Creature : MonoBehaviour
         id = System.Guid.NewGuid().ToString();
         parentsID = creatureParentsID;
         childrenID = new List<string>();
+
+        if(creatureParentsID == null || creatureParentsID.Count == 0)
+        {
+            generation = 0;
+        } 
+        else
+        {   
+            var parentsGen = new int[2];
+            for (var i = 0; i < 2; i++)
+            {
+                parentsGen[i] = creatureLog.GetCreatureByID(creatureParentsID[i]).generation;   
+            }
+            generation = Mathf.Max(parentsGen) + 1;
+        }
 
         var values = new int[] { creatureColor, creatureForm, creatureEye, creatureMouth };
         var ranges = new int[] { 4, 4, 4, 4 };
