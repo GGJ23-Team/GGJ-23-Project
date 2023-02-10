@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
-    public CreatureSessionLog creatureLog;
     public string id;
     // public string name;
     public List<string> parentsID;
     public List<string> childrenID;
+    public List<string> partnersID;
     public int generation;
 
     public int color;
@@ -16,11 +16,17 @@ public class Creature : MonoBehaviour
     public int eye;
     public int mouth;
 
-    public Creature(List<string> creatureParentsID, int creatureColor = -1, int creatureForm = -1, int creatureEye = -1, int creatureMouth = -1)
+    public Creature(List<string> creatureParentsID,
+                    CreatureSessionLog csl,
+                    int creatureColor = -1,
+                    int creatureForm = -1,
+                    int creatureEye = -1,
+                    int creatureMouth = -1)
     {
         id = System.Guid.NewGuid().ToString();
         parentsID = creatureParentsID;
         childrenID = new List<string>();
+        partnersID = new List<string>();
 
         if(creatureParentsID == null || creatureParentsID.Count == 0)
         {
@@ -31,7 +37,7 @@ public class Creature : MonoBehaviour
             var parentsGen = new int[2];
             for (var i = 0; i < 2; i++)
             {
-                parentsGen[i] = creatureLog.GetCreatureByID(creatureParentsID[i]).generation;   
+                parentsGen[i] = csl.GetCreatureByID(creatureParentsID[i]).generation;   
             }
             generation = Mathf.Max(parentsGen) + 1;
         }
@@ -57,7 +63,13 @@ public class Creature : MonoBehaviour
     public void AddChild(Creature child)
     {
         childrenID.Add(child.id);
-        Debug.Log("Child: " + child.name + " added to " + name);
+        Debug.Log("Child: " + child.id + " added to " + id);
+    }
+
+    public void AddPartner(Creature partner)
+    {
+        partnersID.Add(partner.id);
+        Debug.Log("Partner: " + partner.id + " added to " + id);
     }
 }
 
