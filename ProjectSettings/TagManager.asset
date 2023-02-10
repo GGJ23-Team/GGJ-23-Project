@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Creature
   - Slot
+  - Bin
+  - TreeNode
   layers:
   - Default
   - TransparentFX
