@@ -49,7 +49,7 @@ public class CreatureSessionLog : MonoBehaviour
         var slot = GameObject.Find("DesiredCreatureGO").transform.GetChild(0);
 
         var goalCreatureGO = Instantiate(prefabCreatureInSlot, slot);
-        goalCreatureGO.GetComponent<CreatureUI>().SetCreature(c);
+        goalCreatureGO.GetComponent<CreatureUI>().SetCreature(c,false);
 
         goalCreature = c;
 

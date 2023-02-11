@@ -74,9 +74,9 @@ public class CreatureUI : MonoBehaviour
         UpdateCreatureData();
     }
 
-    public void SetCreature(Creature c){
+    public void SetCreature(Creature c, bool force = true){
         creature = c;
-        UpdateCreatureData(false);
+        UpdateCreatureData(force);
     }
 
     public string GetCreatureID()
@@ -86,6 +86,10 @@ public class CreatureUI : MonoBehaviour
 
     public Creature GetCreature() {
         return creature;
+    }
+
+    public int[] GetGenetics(){
+        return new int[] {bodySprite, hueColor, eyesSprite, mouthSprite};
     }
 
 
