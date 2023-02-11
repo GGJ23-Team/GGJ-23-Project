@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class CreatureUI : MonoBehaviour
 {
     [Header("Target Creature")]
-    private CreatureSessionLog creatureSessionLog;
     [HideInInspector] public CreatureSpritePool creatureSpritePool;
     private Creature creature;
     [SerializeField] private string creatureID;
 
     [Header("Attributes")]
-    [SerializeField] private Sprite bodySprite;
-    [SerializeField] private Color hueColor;
-    [SerializeField] private Sprite eyesSprite;
-    [SerializeField] private Sprite mouthSprite;
+    [SerializeField] private int bodySprite;
+    [SerializeField] private int hueColor;
+    [SerializeField] private int eyesSprite;
+    [SerializeField] private int mouthSprite;
 
     [Header("Linked gameobjects")]
     [SerializeField] private Image bodyImage;
@@ -26,48 +25,34 @@ public class CreatureUI : MonoBehaviour
 
     private void Awake()
     {
-        creatureSessionLog = FindObjectOfType<CreatureSessionLog>();
-        if (creatureSessionLog == null)
-        {
-            Debug.LogError("CreatureSessionLog not found.");
-        }
-
         creatureSpritePool = FindObjectOfType<CreatureSpritePool>();
         if (creatureSpritePool == null)
         {
             Debug.LogError("CreatureSpritePool not found.");
         }
-    }
 
-    private void Start()
-    {
-        if (creatureID != null)
-        {
-            //UpdateCreatureData();
-        }
+        //Comonents in children of this GO prefab
+        bodyImage = transform.GetChild(0).GetComponent<Image>();
+        eyesImage = transform.GetChild(1).GetComponent<Image>();
+        mouthImage = transform.GetChild(2).GetComponent<Image>();
+        creature = null;
     }
 
     private void OnValidate()
     {
-        SetCreatureAspect();
+        //SetCreatureAspect();
     }
 
-    private void UpdateCreatureData()
+    private void UpdateCreatureData(bool force = true) //for goal creature
     {
-        creature = creatureSessionLog.GetCreatureByID(creatureID);
+        if (force) creature = CreatureSessionLog.Instance.GetCreatureByID(creatureID);
 
-        if (creature != null)
-        {
-            creatureID = creature.id;
-            //hueColor = creatureSpritePool.hueColor[creature];
-            bodySprite = creatureSpritePool.bodySprites[creature.form];
-            eyesSprite = creatureSpritePool.eyesSprites[creature.eye];
-            mouthSprite = creatureSpritePool.mouthSprites[creature.mouth];
-        }
-        else
-        {
-            Debug.LogError("CreatureSessionLog not found.");
-        }
+        Debug.Log("Creature: " + creature);
+        creatureID = creature.id;
+        hueColor = creature.color;
+        bodySprite = creature.form;
+        eyesSprite = creature.eye;
+        mouthSprite = creature.mouth;
 
         SetCreatureAspect();
     }
@@ -76,18 +61,31 @@ public class CreatureUI : MonoBehaviour
     {
         if (bodyImage != null)
         {
-            bodyImage.sprite = bodySprite;
-            //hue = Mathf.InverseLerp(0, 360, (float)hueColor);
-            bodyImage.color = Color.HSVToRGB(hue, 1, 1);
-            eyesImage.sprite = eyesSprite;
-            mouthImage.sprite = mouthSprite;
+            bodyImage.sprite = creatureSpritePool.bodySprites[bodySprite];
+            bodyImage.color = creatureSpritePool.color[hueColor];
+            eyesImage.sprite = creatureSpritePool.eyesSprites[eyesSprite];
+            mouthImage.sprite = creatureSpritePool.mouthSprites[mouthSprite];
         }
     }
 
     public void SetCreatureID(string id)
     {
-        creatureID = id;
+        this.creatureID = id;
         UpdateCreatureData();
+    }
+
+    public void SetCreature(Creature c){
+        creature = c;
+        UpdateCreatureData(false);
+    }
+
+    public string GetCreatureID()
+    {
+        return creatureID;
+    }
+
+    public Creature GetCreature() {
+        return creature;
     }
 
 
