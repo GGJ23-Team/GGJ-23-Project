@@ -25,7 +25,7 @@ public class Creature : MonoBehaviour
 
         for (int i = 0; i < values.Length; i++)
         {
-            if (values[i] == -1)
+            if (values[i] < 0)
             {
                 values[i] = Random.Range(0, ranges[i]);
             }
@@ -42,6 +42,17 @@ public class Creature : MonoBehaviour
     {
         childrenID.Add(child.id);
         Debug.Log("Child: " + child.name + " added to " + name);
+    }
+
+    public void Set(Creature creature)
+    {
+        id = creature.id;
+        parentsID = creature.parentsID;
+        childrenID = creature.childrenID;
+        color = creature.color;
+        form = creature.form;
+        eye = creature.eye;
+        mouth = creature.mouth;
     }
 }
 

@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /** TODO: 
-  - Adapt to the drag&drop system for getting the parent IDs
+////  - Adapt to the drag&drop system for getting the parent IDs
   - Condition for mutate if crossover parent with child
 */
 
 public class CrossoverButton : MonoBehaviour
 {
-    public List<Creature> creatureList; // Shoud be a singleton
-    public CreatureSessionLog creatureSessionLog; // Shoud be a singleton
     public GameObject creaturePrefab;
 
     [SerializeField] private GameObject parentLeftContainer;
@@ -25,23 +23,19 @@ public class CrossoverButton : MonoBehaviour
     private Creature parentLeft;
     private Creature parentRight;
 
-    public void PerformCrossover()
-    {
-        var leftParentID = parentLeftContainer.transform.GetChild(0).GetComponent<Creature>().id;
-        var rightParentID = parentRightContainer.transform.GetChild(0).GetComponent<Creature>().id;
+    void Start() {
+      parentLeft = new Creature(new List<string>() {});
+      parentRight = new Creature(new List<string>() {});
+    }
 
-        parentLeft = new Creature(new List<string>() { "", "" });
-        parentRight = new Creature(new List<string>() { "", "" });
-        for (int i = 0; i < creatureSessionLog.creatureLog.Count; i++)
-        {
-            if (creatureSessionLog.creatureLog[i].id == leftParentID)
-            {
-                parentLeft = creatureSessionLog.creatureLog[i];
-            }
-            if (creatureSessionLog.creatureLog[i].id == rightParentID)
-            {
-                parentRight = creatureSessionLog.creatureLog[i];
-            }
+    public void PerformCrossover()
+    { 
+        parentLeft = parentLeftContainer.transform.GetChild(0).GetComponent<CreatureUI>().GetCreature();
+        parentRight = parentRightContainer.transform.GetChild(0).GetComponent<CreatureUI>().GetCreature();
+
+        if (parentLeft.id == null || parentRight.id == null) {
+          Debug.Log("No parents selected");
+          return;
         }
 
         int childColor = InheritFeature(parentLeft.color, parentRight.color, 3);
@@ -56,13 +50,17 @@ public class CrossoverButton : MonoBehaviour
                                       childEyes,
                                       childMouth);
 
-        creatureSessionLog.creatureLog.Add(childCreature);
+        CreatureSessionLog.Instance.creatureLog.Add(childCreature);
 
-        creaturePrefab.GetComponent<Creature>().id = childCreature.id;
-        creaturePrefab.GetComponent<Creature>().form = childCreature.form;
-        creaturePrefab.GetComponent<Creature>().color = childCreature.color;
-        creaturePrefab.GetComponent<Creature>().eye = childCreature.eye;
-        creaturePrefab.GetComponent<Creature>().mouth = childCreature.mouth;
+        // TODO: Add the child to the tree : UnityEngine.Object.get_name () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnityEngineObject.bindings.cs:194)
+        // parentLeft.AddChild(childCreature);
+        // parentRight.AddChild(childCreature);
+
+        // Will use for the tree-diagram
+        // parentLeft.AddPartner(parentRight);
+        // parentRight.AddPartner(parentLeft);
+
+        creaturePrefab.GetComponent<CreatureUI>().SetCreatureID(childCreature.id);
 
         Sprite desiredBody, desiredEye, desiredMouth;
         Color desiredColor;
@@ -75,7 +73,7 @@ public class CrossoverButton : MonoBehaviour
 
     private void InstantiateCreature(Sprite desiredBody, Sprite desiredEye, Sprite desiredMouth, Color desiredColor)
     {
-        creaturePrefab = creatureSessionLog.BuildDefinitiveCreature(desiredBody, desiredEye, desiredMouth, desiredColor);
+        creaturePrefab = CreatureSessionLog.Instance.BuildDefinitiveCreature(desiredBody, desiredEye, desiredMouth, desiredColor);
         Instantiate(creaturePrefab, createdCreature.transform);
         creaturePrefab.transform.localScale = new Vector3(100, 100);
     }
@@ -90,12 +88,14 @@ public class CrossoverButton : MonoBehaviour
 
     private void CheckIfWin()
     {
-        var target = desiredCreature.transform.GetChild(0).GetComponent<Creature>();
-
-        if (createdCreature.transform.GetChild(0).GetComponent<Creature>().color == target.color
-            && createdCreature.transform.GetChild(0).GetComponent<Creature>().eye == target.eye
-            && createdCreature.transform.GetChild(0).GetComponent<Creature>().form == target.form
-            && createdCreature.transform.GetChild(0).GetComponent<Creature>().mouth == target.mouth)
+        // TODO: get the creature from the creatureUI or from the creatureSessionLog by ID
+        int[] features = createdCreature.transform.GetChild(0).GetComponent<CreatureUI>().GetGenetics();
+        Creature target = CreatureSessionLog.Instance.goalCreature;
+        
+        if (features[1] == target.color
+            && features[2] == target.eye
+            && features[0] == target.form
+            && features[3] == target.mouth)
         {
             StartCoroutine(WaitForSceneLoad());
         }
