@@ -115,7 +115,19 @@ public class CreatureSessionLog : MonoBehaviour
     {
         creatureLog.Add(creature);
     }
+    
+    public void SetDeletedCreature(string id)
+    {
+        foreach (Creature creature in creatureLog)
+        {
+            if (creature.id == id)
+            {
+                creature.isDeleted = true;
+            }
+        }
+    }
 
+    // Warning: This remove definitely the creature from the log
     public void RemoveCreature(Creature creature)
     {
         bool found = false;
