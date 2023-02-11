@@ -8,26 +8,58 @@ using UnityEngine.UI;
 
 public class CreatureSessionLog : MonoBehaviour
 {
+    public static CreatureSessionLog Instance;
     [SerializeField] private int creaturePoolAmount;
     [SerializeField] private GameObject parentGO;
     [SerializeField] private GameObject prefabCreatureInSlot;
     [SerializeField] private GameObject computerPanel;
     [SerializeField] private GameObject creatureSpritePool;
     public List<Creature> creatureLog;
+    public Creature goalCreature;
 
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
         creatureLog = new List<Creature>();
         CreateRandomCreatureLog();
         InstantiateCreatureLog();
+
+        CreateGoalCreature();
+    }
+
+    private void OnDestroy() {
+        if (Instance == this) {
+            Instance = null;
+        }
+    }
+
+    private void CreateGoalCreature()
+    {
+        Creature c = new Creature(new List<string> {});
+        var slot = GameObject.Find("DesiredCreatureGO").transform.GetChild(0);
+
+        var goalCreatureGO = Instantiate(prefabCreatureInSlot, slot);
+        goalCreatureGO.GetComponent<CreatureUI>().SetCreature(c);
+
+        goalCreature = c;
+
     }
 
     private void CreateRandomCreatureLog()
     {
         for (int i = 0; i < creaturePoolAmount; i++)
         {
-            var firstCreature = new Creature(new List<string> { "", "" });
+            Creature firstCreature = new Creature(new List<string> {});
             creatureLog.Add(firstCreature);
         }
     }
@@ -47,6 +79,9 @@ public class CreatureSessionLog : MonoBehaviour
 
         for (int i = 0; i < creatureLog.Count; i++)
         {
+            GameObject randomCreature = Instantiate(prefabCreatureInSlot, childrenWithTag[i].transform);
+            randomCreature.GetComponent<CreatureUI>().SetCreatureID(creatureLog[i].id);
+            /**
             GameObject randomCreature = BuildCreatureGO(i);
             randomCreature.GetComponent<Creature>().id = creatureLog[i].id;
             randomCreature.GetComponent<Creature>().eye = creatureLog[i].eye;
@@ -54,9 +89,10 @@ public class CreatureSessionLog : MonoBehaviour
             randomCreature.GetComponent<Creature>().color = creatureLog[i].color;
             randomCreature.GetComponent<Creature>().form = creatureLog[i].form;
             GameObject creatureGO = Instantiate(randomCreature, childrenWithTag[i].transform);
+            */
         }
     }
-
+    
     private GameObject BuildCreatureGO(int index)
     {
         var desiredBody = creatureSpritePool.GetComponent<CreatureSpritePool>().bodySprites[creatureLog[index].form];
@@ -74,7 +110,7 @@ public class CreatureSessionLog : MonoBehaviour
         prefabCreatureInSlot.transform.GetChild(2).GetComponent<Image>().sprite = desiredMouth;
         return prefabCreatureInSlot;
     }
-
+    
     public void AddCreature(Creature creature)
     {
         creatureLog.Add(creature);
