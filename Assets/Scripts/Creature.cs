@@ -14,6 +14,8 @@ public class Creature : MonoBehaviour
     public int eye;
     public int mouth;
 
+    public bool isDeleted = false;
+
     public Creature(List<string> creatureParentsID, int creatureColor = -1, int creatureForm = -1, int creatureEye = -1, int creatureMouth = -1)
     {
         id = System.Guid.NewGuid().ToString();
