@@ -260,29 +260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d29784f2d39496186a70e7fe91b267, type: 3}
---- !u!1 &111094559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2433371208538165207, guid: 03edcb49a40637145931f1fef0179739, type: 3}
-  m_PrefabInstance: {fileID: 429660799779761840}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &111094561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111094559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dd7aa49e6a4485cae8a8201f5b1c9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creaturePoolAmount: 1
-  parentGO: {fileID: 1941961357}
-  prefabCreatureInSlot: {fileID: 2191102577766110844, guid: a4f15e3448c7382478186fe2330434cc, type: 3}
-  computerPanel: {fileID: 111094559}
-  creatureSpritePool: {fileID: 971486624}
-  creatureLog: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,11 +571,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49caf44de57f24ffd9c7af5722022d14, type: 3}
---- !u!1 &1941961357 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1725165083, guid: 03edcb49a40637145931f1fef0179739, type: 3}
-  m_PrefabInstance: {fileID: 429660799779761840}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &429660799779761840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -911,6 +883,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2433371208225195547, guid: 03edcb49a40637145931f1fef0179739, type: 3}
+      propertyPath: creaturePrefab
+      value: 
+      objectReference: {fileID: 2260531763700382916, guid: f8697cd66eccd4be69fe0281bd034d46, type: 3}
+    - target: {fileID: 2433371208225195547, guid: 03edcb49a40637145931f1fef0179739, type: 3}
       propertyPath: creatureSpritePool
       value: 
       objectReference: {fileID: 971486624}
@@ -918,6 +894,10 @@ PrefabInstance:
       propertyPath: creatureSpritePool
       value: 
       objectReference: {fileID: 971486624}
+    - target: {fileID: 2625341126963664073, guid: 03edcb49a40637145931f1fef0179739, type: 3}
+      propertyPath: prefabCreatureInSlot
+      value: 
+      objectReference: {fileID: 2191102577766110844, guid: 1e0bef57676a34a918a694f9afbea4a3, type: 3}
     - target: {fileID: 2724124511621457947, guid: 03edcb49a40637145931f1fef0179739, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
