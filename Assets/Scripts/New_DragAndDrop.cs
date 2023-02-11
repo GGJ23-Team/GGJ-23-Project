@@ -25,20 +25,20 @@ public class New_DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHan
     {
         gameObject.transform.SetParent(GameObject.Find("Computer panel").transform);
 
-        Debug.Log("OnBeginDrag");
+        // Debug.Log("New_DragAndDrop: OnBeginDrag");
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
+        // Debug.Log("New_DragAndDrop: OnDrag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
+        // Debug.Log("New_DragAndDrop: OnEndDrag");
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts = true;
 
@@ -57,6 +57,6 @@ public class New_DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
+        // Debug.Log("New_DragAndDrop: OnPointerDown");
     }
 }
